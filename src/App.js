@@ -31,7 +31,7 @@ function App() {
       .catch(console.log);
   };
   return (
-    <div className="App" style={{ backgroundImage:`url(${image})` }}>
+    <div className="App" style={{ backgroundImage:`url(${image})`, }}>
       <Search onSearchChange={handleOnSearchChange}/>
       {currentWeather && <CurrentWeather data={currentWeather} />}
       <div className="forecasts">{forecast && <Forecast data={forecast} />}</div>
