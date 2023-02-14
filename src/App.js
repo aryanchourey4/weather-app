@@ -29,10 +29,12 @@ function App() {
                     city: searchData.label,
                     ...weatherResponse,
                 });
-                setBackimg(`Backgrounds/${currentWeather.weather[0].icon}.jpg`);
+                setBackimg(`Backgrounds/${ {city: searchData.label, ...weatherResponse}.weather[0].icon }.jpg`);
                 setForecast({ city: searchData.label, ...forcastResponse });
             })
             .catch(console.log);
+
+        
     };
     return (
         <div className="App" style={{ backgroundImage: `url(${backimg})` }}>
@@ -42,7 +44,7 @@ function App() {
             </nav>
             {currentWeather && <CurrentWeather data={currentWeather} />}
             {forecast && <Forecast data={forecast} />}
-            <footer className="footer"><p>Made with ❤️ by Aryan Chourey.</p></footer>
+            {/* <footer className="footer"><p>Made with ❤️ by Aryan Chourey.</p></footer> */}
         </div>
     );
 }

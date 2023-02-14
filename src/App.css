@@ -6,8 +6,17 @@
 
 .App {
     height: 100vh;
+    width: 100vw;
     background-repeat: no-repeat;
-    background-size: 100vw auto;
+    background-size: cover;
+    overflow: scroll;
+-ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+.App::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
 }
 
 nav {
@@ -36,7 +45,7 @@ nav {
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.footer {
+/* .footer {
     height: 50px;
     width: 100vw;
     position: absolute;
@@ -53,10 +62,8 @@ nav {
     text-align: center;
     color: #000000;
     padding: 3px 7px;
-    /* background: rgba( 112, 112, 112, 0.2 ); */
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(8px);
-    /* -webkit-backdrop-filter: blur( 8px ); */
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.18);
-}
+} */
