@@ -13,15 +13,15 @@ function App() {
     const [footer, setFooter] = useState("fixed");
     const init = () => {
         setLoad(false)
-        const initFetch = fetch("http://ip-api.com/json/");
+        const initFetch = fetch("https://api.ipgeolocation.io/ipgeo?apiKey=0b03d328617b441cb4f8a8a37b83ca39");
         Promise.all([initFetch])
             .then(async (response) => {
                 const initing = await response[0].json();
                 const currentWeatherFetch2 = fetch(
-                    `${WEATHER_API_URL}/weather?lat=${initing.lat}&lon=${initing.lon}&appid=${WEATHER_API_KEY}&units=metric`
+                    `${WEATHER_API_URL}/weather?lat=${initing.latitude}&lon=${initing.longitude}&appid=${WEATHER_API_KEY}&units=metric`
                 );
                 const forecastFetch2 = fetch(
-                    `${WEATHER_API_URL}/forecast?lat=${initing.lat}&lon=${initing.lon}&appid=${WEATHER_API_KEY}&units=metric`
+                    `${WEATHER_API_URL}/forecast?lat=${initing.latitude}&lon=${initing.longitude}&appid=${WEATHER_API_KEY}&units=metric`
                 );
         
                 Promise.all([currentWeatherFetch2, forecastFetch2])
@@ -30,16 +30,16 @@ function App() {
                         const forcastResponse2 = await response[1].json();
         
                         setCurrentWeather({
-                            city: initing.city,
+                            city: initing.state_prov,
                             ...weatherResponse2,
                         });
                         setBackimg(
                             `Backgrounds/${
-                                { city: initing.city, ...weatherResponse2 }
+                                { city: initing.state_prov, ...weatherResponse2 }
                                     .weather[0].icon
                             }.jpg`
                         );
-                        setForecast({ city: initing.city, ...forcastResponse2 });
+                        setForecast({ city: initing.state_prov, ...forcastResponse2 });
                         setFooter("static");
                     })
                     .catch(console.log);
