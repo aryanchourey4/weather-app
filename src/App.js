@@ -9,6 +9,7 @@ function App() {
     const [currentWeather, setCurrentWeather] = useState(null);
     const [forecast, setForecast] = useState(null);
     const [backimg, setBackimg] = useState('Backgrounds/unknown.jpg')
+    const [footer, setFooter] = useState('fixed')
 
     const handleOnSearchChange = (searchData) => {
         const [lat, lon] = searchData.value.split(" ");
@@ -31,6 +32,7 @@ function App() {
                 });
                 setBackimg(`Backgrounds/${ {city: searchData.label, ...weatherResponse}.weather[0].icon }.jpg`);
                 setForecast({ city: searchData.label, ...forcastResponse });
+                setFooter('static')
             })
             .catch(console.log);
 
@@ -44,7 +46,7 @@ function App() {
             </nav>
             {currentWeather && <CurrentWeather data={currentWeather} />}
             {forecast && <Forecast data={forecast} />}
-            {/* <footer className="footer"><p>Made with ❤️ by Aryan Chourey.</p></footer> */}
+            <footer className="footer" style={{ position: `${footer}` }}><p>Made with ❤️ by Aryan Chourey.</p></footer>
         </div>
     );
 }

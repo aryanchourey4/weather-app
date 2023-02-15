@@ -2,10 +2,10 @@
     color: #000000;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(8px);
-    /* -webkit-backdrop-filter: blur( 8px ); */
+    -webkit-backdrop-filter: blur( 8px );
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
-    background-color: transparent;
+    background: rgba(194, 194, 194, 0.3);
     border-radius: 15px;
     height: 150px;
     width: 80px;
@@ -55,5 +55,6 @@
     align-items: center;
     justify-content: center;
     margin-top: 50px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+    transition: all ease 1s;
 }

@@ -6,12 +6,13 @@
     /* background-color: #333; */
     margin: 20px auto 0 auto;
     padding: 0 20px 20px 20px;
-    /* background: rgba( 112, 112, 112, 0.2 ); */
+    background: rgba(194, 194, 194, 0.3);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     backdrop-filter: blur(8px);
-    /* -webkit-backdrop-filter: blur( 8px ); */
+    -webkit-backdrop-filter: blur(8px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: all ease 1s;
 }
 
 .top,
@@ -72,4 +73,25 @@
 
 .parameter-label.top {
     border-bottom: 1px solid #fff;
+}
+
+@media only screen and (max-width: 400px) {
+    .weather {
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 10px;
+    }
+    .top,
+    .bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .details{
+        padding: 0;
+    }
 }

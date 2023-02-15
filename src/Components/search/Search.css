@@ -1,4 +1,44 @@
 .search-bar{
     width: 500px;
     margin-right: 20px;
+    transition: all ease 1s;
 }
+
+/* Mobiles */
+
+
+
+@media only screen and (max-width: 420px) {
+    .search-bar{
+        margin:20px 0 0 0;
+        width: 230px;
+    }
+}
+@media only screen and (min-width: 421px) and (max-width: 560px) {
+    .search-bar{
+        margin:20px 0 0 0;
+        width: 400px;
+    }
+}
+@media only screen and (min-width: 561px) and (max-width: 760px) {
+    .search-bar{
+        width: 300px;
+    }
+}
+
+@media only screen and (min-width: 319px) and (max-width: 426px) {}
+
+/* Tablet */
+@media only screen and (min-width: 426px) and (max-width: 769px) {}
+
+/* Laptop */
+@media only screen and (min-width: 769px) and (max-width: 1025px) {}
+
+/* Laptop L */
+@media only screen and (min-width: 1025px) and (max-width: 1441px) {}
+
+@media only screen and (min-width: 1441px) and (max-width: 1921px) {}
+
+@media only screen and (min-width: 1921px) and (max-width: 2561px) {}
+
+@media only screen and (min-width: 2561px) {}
