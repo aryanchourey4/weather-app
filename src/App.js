@@ -13,7 +13,7 @@ function App() {
     const [footer, setFooter] = useState("fixed");
     const init = () => {
         setLoad(false)
-        const initFetch = fetch("https://api.ipgeolocation.io/ipgeo?apiKey=0b03d328617b441cb4f8a8a37b83ca39");
+        const initFetch = fetch("https://ipapi.co/json/");
         Promise.all([initFetch])
             .then(async (response) => {
                 const initing = await response[0].json();
@@ -30,16 +30,16 @@ function App() {
                         const forcastResponse2 = await response[1].json();
         
                         setCurrentWeather({
-                            city: initing.state_prov,
+                            city: initing.city,
                             ...weatherResponse2,
                         });
                         setBackimg(
                             `Backgrounds/${
-                                { city: initing.state_prov, ...weatherResponse2 }
+                                { city: initing.city, ...weatherResponse2 }
                                     .weather[0].icon
                             }.jpg`
                         );
-                        setForecast({ city: initing.state_prov, ...forcastResponse2 });
+                        setForecast({ city: initing.city, ...forcastResponse2 });
                         setFooter("static");
                     })
                     .catch(console.log);
