@@ -52,6 +52,7 @@ nav {
     align-items: center;
     justify-content: center;
     text-align: center;
+    cursor: context-menu;
 }
 .footer p {
     display: flex;
