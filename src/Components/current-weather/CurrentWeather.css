@@ -75,7 +75,27 @@
     border-bottom: 1px solid #fff;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (min-width: 300px) and (max-width: 400px) {
+    .weather {
+        width: 250px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 10px;
+    }
+    .top,
+    .bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .details{
+        padding: 0;
+    }
+}
+@media only screen and (max-width: 300px) {
     .weather {
         width: 200px;
         display: flex;
